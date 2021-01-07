@@ -1,0 +1,25 @@
+header {
+    background-color: #1E1E1E;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    float: left;
+    padding: 15px 0 15px 15%;
+
+    color: #E84855;
+    font-size: 250%;
+    font-weight: 400;
+}
+
+.header-search {
+    color: white;
+    padding: 15px 15% 15px 0;
+
+    float: right;
+    font-size: 150%;
+}
