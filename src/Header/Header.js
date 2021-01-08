@@ -8,8 +8,8 @@ function Header() {
 				Covid Самбар
 			</div>
 			
-			<div class="header-search">
-				Аймаг&nbsp;<i class="fas fa-search"></i>
+			<div className="header-search">
+				Аймаг&nbsp;<i className="fas fa-search"></i>
 			</div>
 		</header>
     )
