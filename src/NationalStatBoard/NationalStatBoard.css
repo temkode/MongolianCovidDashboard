@@ -1,0 +1,70 @@
+.wrapper-stat-list {
+    /* display: flex; */
+}
+
+.stat-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    grid-gap: .8rem;
+    align-items: start;
+
+    margin: 20px 15%;
+}
+
+.stat-item {
+    border-radius: .4rem;
+    padding: 1rem .5rem;
+
+    font-weight: 600;
+}
+
+.stat-item .count {
+    display: flex;
+    align-items: center;
+
+    font-size: 1.65rem;
+}
+
+.stat-item .diff {
+    display: inline-block;
+    font-size: 1rem;
+
+    margin-left: 5px;
+}
+
+.stat-item .crit {
+    display: inline-block;
+    font-size: 1rem;
+
+    margin-left: 5px;
+}
+
+.stat-item .label {
+    margin-top: 5px;
+    font-size: 1.1rem;
+}
+
+.stat-list .confirmed {
+    background-color: #EB5C68;
+    color: #EBEBEB;
+}
+
+.stat-list .recovered {
+    background-color: #028D2C;
+    color: #EBEBEB;
+}
+
+.stat-list .dead {
+    background-color: #143D3E;
+    color: #EBEBEB;
+}
+
+.stat-list .active {
+    background-color: #E63746;
+    color: #EBEBEB;
+}
+
+.stat-list .tested {
+    background-color: #0F7173;
+    color: #EBEBEB;
+}
