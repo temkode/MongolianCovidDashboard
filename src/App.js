@@ -3,17 +3,11 @@ import { useState, useEffect } from 'react';
 import Header from './Header/Header'
 import NationalStatBoard from "./NationalStatBoard/NationalStatBoard";
 
+
 function App() {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
-	const [items, setItems] = useState(
-		{
-			'daily': [],
-			'prefectures': [],
-			'regions': [],
-			'updated': ""
-		}
-	);
+	const [items, setItems] = useState();
 
 	useEffect(() => {
 		fetch("https://covid19mn.web.app/summary/latest.json")
@@ -33,11 +27,11 @@ function App() {
 	let data;
 	if (error) {
 		data = {
-			"confirmed": ["Error", "NaN"],
-			"recovered": ["Error", "NaN"],
-			"dead": ["Error", "NaN"],
-			"active": ["Error", "NaN"],
-			"tested": ["Error", "NaN"],
+			"confirmed": ["Error", "..."],
+			"recovered": ["Error", "..."],
+			"dead": ["Error", "..."],
+			"active": ["Error", "..."],
+			"tested": ["Error", "..."],
 		}
 	} else if (!isLoaded) {
 		data = {
@@ -50,11 +44,15 @@ function App() {
 	} else {
 		let stats = items.daily[items.daily.length - 1]
 		data = { 
-			"confirmed": [new Intl.NumberFormat().format(stats["confirmedCumulative"]), new Intl.NumberFormat().format(stats["confirmed"])],
-			"recovered": [new Intl.NumberFormat().format(stats["recoveredCumulative"]), new Intl.NumberFormat().format(stats["recovered"])],
-			"dead": [new Intl.NumberFormat().format(stats["reportedDeceasedCumulative"]), new Intl.NumberFormat().format(stats["reportedDeceased"])],
-			"active": [new Intl.NumberFormat().format(stats["activeCumulative"]), new Intl.NumberFormat().format(stats["active"]), stats["criticalCumulative"]],
-			"tested": [new Intl.NumberFormat().format(stats["testedCumulative"]), new Intl.NumberFormat().format(stats["tested"])],
+			"confirmed": [fmtNumber(stats["confirmedCumulative"]), fmtNumber(stats["confirmed"], true)],
+			"recovered": [fmtNumber(stats["recoveredCumulative"]), fmtNumber(stats["recovered"], true)],
+			"dead": [fmtNumber(stats["reportedDeceasedCumulative"]), fmtNumber(stats["reportedDeceased"], true)],
+			"tested": [fmtNumber(stats["testedCumulative"]), fmtNumber(stats["tested"], true)],
+			"active": [
+				fmtNumber(stats["activeCumulative"]), 
+				fmtNumber(stats["active"], true), 
+				stats["criticalCumulative"]
+			],
 		}
 	}
 
@@ -66,5 +64,16 @@ function App() {
 		</div>
 	);
 }
+
+function fmtNumber(number, signAdd=false) {
+	let rv = '';
+	if (signAdd) {
+		rv += (number < 0) ? '-' : '+'
+	}
+	rv += new Intl.NumberFormat().format(number)
+	
+	return rv
+}
+
 
 export default App;
