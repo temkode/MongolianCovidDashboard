@@ -45,7 +45,7 @@
 }
 
 .stat-list .confirmed {
-    background-color: #EB5C68;
+    background-color: #E63746;
     color: #EBEBEB;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .stat-list .active {
-    background-color: #E63746;
+    background-color: #DA1B2B;
     color: #EBEBEB;
 }
 
