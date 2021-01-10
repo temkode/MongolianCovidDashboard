@@ -2,6 +2,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import Header from './Header/Header'
 import NationalStatBoard from "./NationalStatBoard/NationalStatBoard";
+import RegionalStatBoard from "./RegionalStatBoard/RegionalStatBoard";
 
 
 function App() {
@@ -24,26 +25,32 @@ function App() {
 			)
 	}, [])
 
-	let data;
+	let national_data;
+	let regional_data;
 	if (error) {
-		data = {
+		national_data = {
 			"confirmed": ["Error", "..."],
 			"recovered": ["Error", "..."],
 			"dead": ["Error", "..."],
 			"active": ["Error", "..."],
 			"tested": ["Error", "..."],
 		}
+		regional_data = null
 	} else if (!isLoaded) {
-		data = {
+		national_data = {
 			"confirmed": ["...", "..."],
 			"recovered": ["...", "..."],
 			"dead": ["...", "..."],
 			"active": ["...", "..."],
 			"tested": ["...", "..."],
 		}
+		regional_data = {
+			regions: [],
+			prefectures: []
+		};
 	} else {
 		let stats = items.daily[items.daily.length - 1]
-		data = { 
+		national_data = { 
 			"confirmed": [fmtNumber(stats["confirmedCumulative"]), fmtNumber(stats["confirmed"], true)],
 			"recovered": [fmtNumber(stats["recoveredCumulative"]), fmtNumber(stats["recovered"], true)],
 			"dead": [fmtNumber(stats["reportedDeceasedCumulative"]), fmtNumber(stats["reportedDeceased"], true)],
@@ -54,12 +61,17 @@ function App() {
 				stats["criticalCumulative"]
 			],
 		}
+		regional_data = {
+			regions: items.regions,
+			prefectures: items.prefectures
+		};
 	}
 
 	return (
 		<div className="App">
 			<Header />
-			<NationalStatBoard data={data}/>
+			<NationalStatBoard data={national_data}/>
+			<RegionalStatBoard data={regional_data}/>
 		
 		</div>
 	);

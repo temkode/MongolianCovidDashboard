@@ -1,7 +1,3 @@
-.wrapper-stat-list {
-    /* display: flex; */
-}
-
 .stat-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
