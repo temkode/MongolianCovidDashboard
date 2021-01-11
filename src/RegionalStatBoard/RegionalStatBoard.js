@@ -42,7 +42,7 @@ class RegionalStatBoard extends React.Component {
                                 {this.state.region.prefectures.map(value => {
                                     let prefecture_data = this.props.data.prefectures.find(x => x.name === value.api_name);
                                     return (
-                                        <div className="prefecture">
+                                        <div className="prefecture" key={value.api_name}>
                                             <div className="name">
                                                 {value.display_name}
                                             </div>
@@ -50,7 +50,10 @@ class RegionalStatBoard extends React.Component {
                                                 Active cases
                                             </div>
                                             <div className="count">
-                                                {prefecture_data.confirmed}<div className="diff">( +{prefecture_data.newlyConfirmed} )</div>
+                                                {prefecture_data ? prefecture_data.confirmed : "..."}
+                                                <div className="diff">
+                                                    ( +{prefecture_data ? prefecture_data.newlyConfirmed : "..."} )
+                                                </div>
                                             </div>
                                         </div>
                                     )
