@@ -11,7 +11,7 @@ function App() {
 	const [items, setItems] = useState();
 
 	useEffect(() => {
-		fetch("https://covid19mn.web.app/summary/latest.json")
+		fetch("https://ywv3go.deta.dev/latest")
 			.then(res => res.json())
 			.then(
 				(result) => {
