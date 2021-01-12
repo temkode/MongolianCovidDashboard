@@ -1,33 +1,70 @@
-import './NationalStatBoard.css'
+import React from 'react';
+import './NationalStatBoard.css';
 
 
-function NationalStatBoard(props) {
-	return (
-		<div className="wrapper-stat-list">
-			<div className="stat-list">
-				<div className="stat-item confirmed">
-					<div className="count">{props.data["confirmed"][0]}<div className="diff">( {props.data["confirmed"][1]} )</div></div>
-					<div className="label">Confirmed</div>
+class NationalStatBoard extends React.Component {
+	constructor(props) {
+        super(props);
+        this.state = {
+			error: null,
+			isLoaded: false,
+			items: {}
+		};
+	}
+
+	componentDidMount() {
+		fetch("https://ywv3go.deta.dev/national")
+			.then(res => res.json())
+			.then(
+				(result) => {
+					this.setState({
+						isLoaded: true,
+						items: result
+					});
+				},
+
+				(error) => {
+					this.setState({
+						isLoaded: true,
+						error
+					});
+				}
+			)
+	}
+
+	render() {
+		const { error, isLoaded, items } = this.state;
+		if (!error) {
+			return (
+				<div className="wrapper-stat-list">
+					<div className="stat-list">
+						<div className="stat-item confirmed">
+							<div className="count">{isLoaded ? items.confirmedCumulative : "..."}<div className="diff">( {isLoaded ? items.confirmed : "..."} )</div></div>
+							<div className="label">Confirmed</div>
+						</div>
+						<div className="stat-item recovered">
+							<div className="count">{isLoaded ? items.recoveredCumulative : "..."}<div className="diff">( {isLoaded ? items.recovered : "..."} )</div></div>
+							<div className="label">Recovered</div>
+						</div>
+						<div className="stat-item dead">
+							<div className="count">{isLoaded ? items.deceasedCumulative : "..."}<div className="diff">( {isLoaded ? items.deceased : "..."} )</div></div>
+							<div className="label">Deceased</div>
+						</div>
+						<div className="stat-item active">
+							<div className="count">{isLoaded ? items.activeCumulative : "..."}<div className="diff">( {isLoaded ? items.active : "..."} )</div></div>
+							<div className="label">Active<div className="crit">({isLoaded ? items.criticalCumulative : "..."} critical)</div></div>
+						</div>
+						<div className="stat-item tested">
+							<div className="count">{isLoaded ? items.testedCumulative : "..."}<div className="diff">( {isLoaded ? items.tested : "..."} )</div></div>
+							<div className="label">Tested</div>
+						</div>
+					</div>
 				</div>
-				<div className="stat-item recovered">
-					<div className="count">{props.data["recovered"][0]}<div className="diff">( {props.data["recovered"][1]} )</div></div>
-					<div className="label">Recovered</div>
-				</div>
-				<div className="stat-item dead">
-					<div className="count">{props.data["dead"][0]}<div className="diff">( {props.data["dead"][1]} )</div></div>
-					<div className="label">Deceased</div>
-				</div>
-				<div className="stat-item active">
-					<div className="count">{props.data["active"][0]}<div className="diff">( {props.data["active"][1]} )</div></div>
-					<div className="label">Active<div className="crit">({props.data["active"][2]} critical)</div></div>
-				</div>
-				<div className="stat-item tested">
-					<div className="count">{props.data["tested"][0]}<div className="diff">( {props.data["tested"][1]} )</div></div>
-					<div className="label">Tested</div>
-				</div>
-			</div>
-		</div>
-	)
+			)
+		} else {
+			return <h1>Error</h1>  // TODO properly handle
+		}
+	}
 }
 
 
