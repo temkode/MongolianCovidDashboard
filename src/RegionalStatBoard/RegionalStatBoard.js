@@ -10,9 +10,19 @@ class RegionalStatBoard extends React.Component {
 		    error: null,
 			isLoaded: false,
             items: [],
-            region: "Ulaanbaatar"
-		};
-	}
+            region: props.match.params.region || "Ulaanbaatar"
+        };
+    }
+
+    // TODO investigate componentWillUpdate() for better fit
+    componentDidUpdate(prevPop) {   
+        // Update state on region changing not just updating. Otherwise open render loop occurs
+        if (this.props.match.params.region !== prevPop.match.params.region) {
+            this.setState({
+                region: this.props.match.params.region
+            })
+        }
+    }
 
 	componentDidMount() {
 		fetch("https://ywv3go.deta.dev/regional")
@@ -33,20 +43,33 @@ class RegionalStatBoard extends React.Component {
 				}
 			)
     }
-    
-    regionNavHandler(x) {
-        this.setState({
-            region: x
-        });
+
+    async copyUrl() {
+        const dummy = document.createElement('input');
+        const text = window.location.href;
+
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+
+        const x = document.getElementById('url-tip');
+        x.classList.remove('hidden');
+        await new Promise(res => setTimeout(res, 1000));
+        x.classList.add('hidden');
     }
 
-    
     render () {
         const { error, isLoaded, items } = this.state;
         if (!error) {
             let region_data =  items.find(x => x.name === this.state.region);
             return  (
                 <div className="region-wrapper">
+                    <div className="share-btn-wrapper">
+                        <div className="share-btn" onClick={this.copyUrl}>Share</div>
+                        <span class="hidden tooltiptext" id="url-tip">URL copied!</span>
+                    </div>
                     <div className="region-area">
                         <div className="region">
                             <div className="map">
@@ -93,9 +116,7 @@ class RegionalStatBoard extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <RegionNavMenu 
-                        regionNavHandler={(x) => this.regionNavHandler(x)}
-                        regions={isLoaded ? items : []}/>
+                    <RegionNavMenu regions={isLoaded ? items : []}/>
                 </div>
             )
         } else {

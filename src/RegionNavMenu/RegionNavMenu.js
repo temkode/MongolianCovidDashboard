@@ -1,4 +1,5 @@
 import './RegionNavMenu.css';
+import {Link} from "react-router-dom";
 
 
 function RegionNavMenu(props) {
@@ -7,9 +8,9 @@ function RegionNavMenu(props) {
             <div className="region-nav">
                 {props.regions.map(k => {
                     return (
-                        <div className="region-btn" key={k.name} onClick={() => props.regionNavHandler(k.name)}>
+                        <Link to={`/${k.name}`} className="region-btn" key={k.name}>
                             {k.display_name}
-                        </div>
+                        </Link>
                     )
                 })}
             </div>

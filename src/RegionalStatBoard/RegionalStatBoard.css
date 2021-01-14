@@ -1,5 +1,5 @@
 .region-wrapper {
-    margin: 50px 15%; 
+    margin: 30px 15%; 
 }
 
 .region-area {
@@ -114,4 +114,41 @@
 
 .prefecture .count {
     color: #FCF6F5
+}
+
+.share-btn-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.share-btn-wrapper .tooltiptext {
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    
+    margin-right: 15px;
+}
+
+.share-btn-wrapper .hidden {
+    visibility: hidden;
+}
+
+.share-btn {
+    color: #FCF6F5;
+    background-color: #990011;
+
+    padding: 10px 15px;
+    min-width: 115px;
+    border-radius: 5px;
+}
+
+.share-btn:hover {
+    color: #990011;
+    background-color: #FCF6F5;
+}
+.share-btn:active {
+    color: #FCF6F5;
+    background-color: #990011;
 }
