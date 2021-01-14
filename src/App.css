@@ -50,7 +50,11 @@ footer {
 	color: #db4a39;
 }
 
-
+@media screen and (max-width: 768px) {
+  footer {
+    padding: 50px 5%;
+  }
+}
 
 
 

@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    margin-top: 25px;
+    margin-top: 15px;
     font-size: .85rem;
     font-weight: 500;
 }
@@ -11,9 +11,9 @@
     color: #FCF6F5;
     background-color: #990011;
 
-    margin: 0 10px 10px 0;
+    margin: 10px 10px 10px 0;
     padding: 10px;
-    min-width: 115px;
+    min-width: 100px;
     border-radius: 5px;
 
     text-decoration: none;
@@ -28,5 +28,6 @@
 }
 
 .region-nav-info {
+    margin-top: 10px;
     color: #FCF6F5;
 }

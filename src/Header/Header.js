@@ -20,15 +20,15 @@ function Header() {
 	}, [])
 
     return (
-        <header>
+      	<header>
 			<div className="header-logo">
-				Covid Самбар
+				Covid <div className="mobile-space">Самбар</div>
 			</div>
-			
+        
 			<div className="header-updated">
-				Last updated:&nbsp;{error || timeSince(item)}
+				Last updated:&nbsp;<div className="mobile-space">{error || timeSince(item)}</div>
 			</div>
-		</header>
+      	</header>
     )
 }
 

@@ -61,15 +61,15 @@ class RegionalStatBoard extends React.Component {
     }
 
     render () {
-        const up_trend_icon = <i class="fas fa-chart-line"></i>;
-        const healthy_icon = <i class="fas fa-shield-virus"></i>;
+        const up_trend_icon = <i className="fas fa-chart-line"></i>;
+        const healthy_icon = <i className="fas fa-shield-virus"></i>;
         const { error, isLoaded, items } = this.state;
         if (!error) {
             let region_data =  items.find(x => x.name === this.state.region);
             return  (
                 <div className="region-wrapper">
                     <div className="share-btn-wrapper">
-                        <div className="share-btn" onClick={this.copyUrl}>Share <i class="fas fa-share-square"></i></div>
+                        <div className="share-btn" onClick={this.copyUrl}>Share&nbsp;<i className="fas fa-share-square"></i></div>
                         <span className="hidden tooltiptext" id="url-tip">URL copied!</span>
                     </div>
                     <div className="region-area">
@@ -82,17 +82,19 @@ class RegionalStatBoard extends React.Component {
                                     <div className="region-name">
                                         {isLoaded ? region_data.display_name : "..."}
                                     </div>
-                                    <div className="stat">
-                                        <div className="label">Active</div>
-                                        <div className="count">{isLoaded ? region_data.active : "..."}</div>
-                                    </div>
-                                    <div>
-                                        <div className="label">Deceased</div>
-                                        <div className="count">{isLoaded ? region_data.deceased : "..."}</div>
-                                    </div>
-                                    <div className="stat">
-                                        <div className="label">Confirmed</div>
-                                        <div className="count">{isLoaded ? region_data.confirmed : "..."}<div className="diff">( {isLoaded ? region_data.newlyConfirmed : "..."} )</div></div>
+                                    <div className="stats">
+                                        <div className="stat">
+                                            <div className="label">Active</div>
+                                            <div className="count">{isLoaded ? region_data.active : "..."}</div>
+                                        </div>
+                                        <div>
+                                            <div className="label">Deceased</div>
+                                            <div className="count">{isLoaded ? region_data.deceased : "..."}</div>
+                                        </div>
+                                        <div className="stat">
+                                            <div className="label">Confirmed</div>
+                                            <div className="count">{isLoaded ? region_data.confirmed : "..."}<div className="diff">( {isLoaded ? region_data.newlyConfirmed : "..."} )</div></div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="prefecture-area">

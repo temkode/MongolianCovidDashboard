@@ -44,9 +44,10 @@
 .title-wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-    padding: 5px 0 15px 0;
+    padding: 15px 0 15px 0;
     color: #FCF6F5;
     background-color: #990011;
 }
@@ -144,7 +145,6 @@
     background-color: #990011;
 
     padding: 10px 15px;
-    min-width: 115px;
     border-radius: 5px;
     font-weight: 500;
 
@@ -163,4 +163,31 @@
 
 .green {
     background-color: #028D2C;
+}
+.stats {
+    margin-left: 30px;
+    flex-grow: 2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .region-wrapper {
+        margin: 20px 5%; 
+    }
+    .data-board {
+        border-left: 0;
+    }
+    .title-wrapper{
+        padding: 15px 0;
+    }
+    .stats {
+        padding-top: 15px;
+        margin: 0 15px;
+    }
+    
+    .region-name {
+        padding-left: 10px;
+    }
 }

@@ -8,7 +8,6 @@ header {
 }
 
 .header-logo {
-    float: left;
     padding: 15px 0 15px 15%;
 
     color: #E84855;
@@ -18,8 +17,29 @@ header {
 
 .header-updated {
     color: white;
-    padding: 5px 15% 5px 0;
+    padding: 15px 15% 15px 0;
 
-    float: right;
     font-size: 1.1rem;
+}
+
+.mobile-space {
+    display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        align-items: flex-end;
+    }
+    .header-logo {
+      font-size: 2.5rem;
+      padding: 15px 0 15px 5%;
+
+    }
+    .header-updated {
+        padding: 15px 5% 15px 0;
+        font-size: 1rem;
+    }
+    .mobile-space {
+        display: block;
+    }
 }
