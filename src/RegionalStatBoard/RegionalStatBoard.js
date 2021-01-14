@@ -69,13 +69,13 @@ class RegionalStatBoard extends React.Component {
             return  (
                 <div className="region-wrapper">
                     <div className="share-btn-wrapper">
-                        <div className="share-btn" onClick={this.copyUrl}>Share&nbsp;<i className="fas fa-share-square"></i></div>
-                        <span className="hidden tooltiptext" id="url-tip">URL copied!</span>
+                        <div className="share-btn" onClick={this.copyUrl}>Хуваалцах&nbsp;<i className="fas fa-share-square"></i></div>
+                        <span className="hidden tooltiptext" id="url-tip">URL хуулагдлаа!</span>
                     </div>
                     <div className="region-area">
                         <div className="region">
                             <div className="map">
-                                <img src={`${process.env.PUBLIC_URL}/region-images/${isLoaded ? region_data.image_path : "ub.jpg"}`} alt="Map"/>
+                                <img src={`${process.env.PUBLIC_URL}/region-images/${isLoaded ? region_data.image_path : "ub.jpg"}`} alt="Газрын зураг"/>
                             </div>
                             <div className="data-board">
                                 <div className="title-wrapper">
@@ -84,15 +84,15 @@ class RegionalStatBoard extends React.Component {
                                     </div>
                                     <div className="stats">
                                         <div className="stat">
-                                            <div className="label">Active</div>
+                                            <div className="label">Идэвхтэй</div>
                                             <div className="count">{isLoaded ? region_data.active : "..."}</div>
                                         </div>
                                         <div>
-                                            <div className="label">Deceased</div>
+                                            <div className="label">Нас барсан</div>
                                             <div className="count">{isLoaded ? region_data.deceased : "..."}</div>
                                         </div>
                                         <div className="stat">
-                                            <div className="label">Confirmed</div>
+                                            <div className="label">Батлагдсан</div>
                                             <div className="count">{isLoaded ? region_data.confirmed : "..."}<div className="diff">( {isLoaded ? region_data.newlyConfirmed : "..."} )</div></div>
                                         </div>
                                     </div>
@@ -108,7 +108,7 @@ class RegionalStatBoard extends React.Component {
                                                     {is_green ? healthy_icon : null}
                                                 </div>
                                                 <div className="label">
-                                                    Active cases
+                                                    Идэвхтэй тохиолдлууд
                                                 </div>
                                                 <div className="count">
                                                     {prefecture_data.confirmed}

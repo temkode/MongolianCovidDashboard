@@ -14,7 +14,7 @@ function RegionNavMenu(props) {
                     )
                 })}
             </div>
-            <div className="region-nav-info">The regions not here have no recorded Covid cases</div>
+            <div className="region-nav-info">Энд байхгүй бүс нутагт Ковидын тохиолдол бүртгэгдээгүй байна.</div>
         </div>
         
     )

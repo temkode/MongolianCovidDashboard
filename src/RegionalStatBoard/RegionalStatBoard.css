@@ -114,7 +114,8 @@
 }
 
 .prefecture .label {
-    color: #FCF6F5
+    color: #FCF6F5;
+    font-size: 85%;
 }
 
 .prefecture .count {

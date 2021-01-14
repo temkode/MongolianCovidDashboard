@@ -4,6 +4,7 @@ footer {
   color: #FCF6F5;
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
   padding: 50px 15%;
@@ -14,6 +15,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 80%;
 }
 
 .footer-title {
@@ -24,6 +26,11 @@ footer {
 
 .footer-source {
   font-size: 0.85rem;
+  margin-top: 25px;
+}
+
+.footer-source a {
+  color: inherit;
 }
 
 .footer-right {
@@ -35,6 +42,10 @@ footer {
   color: inherit;
   font-size: 1.65rem;
   margin-left: 0.25rem;
+}
+
+.footer-socials {
+  margin-top: 50px;
 }
 
 #linkedin:hover {

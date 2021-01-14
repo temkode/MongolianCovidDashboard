@@ -26,7 +26,7 @@ function Header() {
 			</div>
         
 			<div className="header-updated">
-				Last updated:&nbsp;<div className="mobile-space">{error || timeSince(item)}</div>
+			Сүүлд шинэчлэгдсэн:&nbsp;<div className="mobile-space updated">{error || timeSince(item)}</div>
 			</div>
       	</header>
     )
@@ -40,23 +40,23 @@ function timeSince(date) {
     let interval = seconds / 31536000;
   
     if (interval > 1) {
-      return Math.floor(interval) + " years ago";
+      return Math.floor(interval) + " жилийн өмнө";
     }
     interval = seconds / 2592000;
     if (interval > 1) {
-      return Math.floor(interval) + " months ago";
+      return Math.floor(interval) + " сарын өмнө";
     }
     interval = seconds / 86400;
     if (interval > 1) {
-      return Math.floor(interval) + " days ago";
+      return Math.floor(interval) + " өдрийн өмнө";
     }
     interval = seconds / 3600;
     if (interval > 1) {
-      return Math.floor(interval) + " hours ago";
+      return Math.floor(interval) + " цагийн өмнө";
     }
     interval = seconds / 60;
     if (interval > 1) {
-      return Math.floor(interval) + " minutes ago";
+      return Math.floor(interval) + " минутын өмнө";
     }
     return Math.floor(seconds) + " seconds ago";
 }
