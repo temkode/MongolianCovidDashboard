@@ -5,6 +5,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    padding: 10px 0;
 }
 
 .header-logo {
@@ -24,6 +25,9 @@ header {
 
 .mobile-space {
     display: inline-block;
+}
+.updated {
+    font-weight: 600;
 }
 
 @media screen and (max-width: 768px) {
