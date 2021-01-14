@@ -4,7 +4,7 @@ header {
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .header-logo {
@@ -16,10 +16,10 @@ header {
     font-weight: 400;
 }
 
-.header-search {
+.header-updated {
     color: white;
-    padding: 15px 15% 15px 0;
+    padding: 5px 15% 5px 0;
 
     float: right;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
