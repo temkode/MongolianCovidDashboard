@@ -61,14 +61,16 @@ class RegionalStatBoard extends React.Component {
     }
 
     render () {
+        const up_trend_icon = <i class="fas fa-chart-line"></i>;
+        const healthy_icon = <i class="fas fa-shield-virus"></i>;
         const { error, isLoaded, items } = this.state;
         if (!error) {
             let region_data =  items.find(x => x.name === this.state.region);
             return  (
                 <div className="region-wrapper">
                     <div className="share-btn-wrapper">
-                        <div className="share-btn" onClick={this.copyUrl}>Share</div>
-                        <span class="hidden tooltiptext" id="url-tip">URL copied!</span>
+                        <div className="share-btn" onClick={this.copyUrl}>Share <i class="fas fa-share-square"></i></div>
+                        <span className="hidden tooltiptext" id="url-tip">URL copied!</span>
                     </div>
                     <div className="region-area">
                         <div className="region">
@@ -95,10 +97,13 @@ class RegionalStatBoard extends React.Component {
                                 </div>
                                 <div className="prefecture-area">
                                     {isLoaded ? region_data.prefectures.map(prefecture_data => {
+                                        const is_green = prefecture_data.confirmed == 0;
                                         return (
-                                            <div className="prefecture" key={prefecture_data.name}>
+                                            <div className={`prefecture ${is_green ? "green" : ""}`} key={prefecture_data.name}>
                                                 <div className="name">
                                                     {prefecture_data.display_name}
+                                                    {prefecture_data.newlyConfirmed !== "+0" ? up_trend_icon : null}
+                                                    {is_green ? healthy_icon : null}
                                                 </div>
                                                 <div className="label">
                                                     Active cases

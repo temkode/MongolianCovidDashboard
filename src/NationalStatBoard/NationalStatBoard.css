@@ -4,12 +4,12 @@
     grid-gap: .8rem;
     align-items: start;
 
-    margin: 20px 15%;
+    margin: 15px 15%;
 }
 
 .stat-item {
     border-radius: .4rem;
-    padding: 1rem .5rem;
+    padding: .5rem .5rem;
 
     font-weight: 600;
 }
@@ -28,16 +28,13 @@
     margin-left: 5px;
 }
 
-.stat-item .crit {
-    display: inline-block;
-    font-size: 1rem;
-
-    margin-left: 5px;
-}
-
 .stat-item .label {
-    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 1.1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .stat-list .confirmed {
@@ -63,4 +60,8 @@
 .stat-list .tested {
     background-color: #0F7173;
     color: #EBEBEB;
+}
+
+.stat-list i {
+    font-size: 2rem;
 }

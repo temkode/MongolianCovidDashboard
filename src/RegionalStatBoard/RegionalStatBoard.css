@@ -1,5 +1,5 @@
 .region-wrapper {
-    margin: 30px 15%; 
+    margin: 20px 15%; 
 }
 
 .region-area {
@@ -106,6 +106,10 @@
     font-weight: 600;
     font-size: 1.2rem;
     margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .prefecture .label {
@@ -120,7 +124,7 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .share-btn-wrapper .tooltiptext {
@@ -142,6 +146,10 @@
     padding: 10px 15px;
     min-width: 115px;
     border-radius: 5px;
+    font-weight: 500;
+
+    display: flex;
+    justify-content: space-between;
 }
 
 .share-btn:hover {
@@ -151,4 +159,8 @@
 .share-btn:active {
     color: #FCF6F5;
     background-color: #990011;
+}
+
+.green {
+    background-color: #028D2C;
 }
