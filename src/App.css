@@ -1,3 +1,60 @@
 .App {
   /* text-align: center; */
 }
+
+footer {
+  margin-top: 50px;
+  background-color: #1E1E1E;
+  color: #FCF6F5;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 50px 15%;
+  min-height: 225px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.footer-source {
+  font-size: 0.85rem;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.footer-socials a {
+  color: inherit;
+  font-size: 1.65rem;
+  margin-left: 0.25rem;
+}
+
+#linkedin:hover {
+	color: #0e76a8;
+}
+#ig:hover {
+	color: #dd2a7b;
+}
+#fb:hover {
+	color: #3b5998;
+}
+#gmail:hover {
+	color: #db4a39;
+}
+
+
+
+
+
