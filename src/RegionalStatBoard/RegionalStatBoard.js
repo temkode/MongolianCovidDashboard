@@ -97,7 +97,7 @@ class RegionalStatBoard extends React.Component {
                                 </div>
                                 <div className="prefecture-area">
                                     {isLoaded ? region_data.prefectures.map(prefecture_data => {
-                                        const is_green = prefecture_data.confirmed == 0;
+                                        const is_green = prefecture_data.confirmed === "0";
                                         return (
                                             <div className={`prefecture ${is_green ? "green" : ""}`} key={prefecture_data.name}>
                                                 <div className="name">
