@@ -8,8 +8,8 @@
 }
 
 .region-btn {
-    color: #FCF6F5;
-    background-color: #990011;
+    color: #FBFFFE;
+    background-color: #A62832;
 
     margin: 10px 10px 10px 0;
     padding: 10px;
@@ -19,15 +19,15 @@
     text-decoration: none;
 }
 .region-btn:hover {
-    color: #990011;
-    background-color: #FCF6F5;
+    color: #A62832;
+    background-color: #FBFFFE;
 }
 .region-btn:active {
-    color: #FCF6F5;
-    background-color: #990011;
+    color: #FBFFFE;
+    background-color: #A62832;
 }
 
 .region-nav-info {
     margin-top: 10px;
-    color: #FCF6F5;
+    color: #FBFFFE;
 }

@@ -11,13 +11,13 @@ header {
 .header-logo {
     padding: 15px 0 15px 15%;
 
-    color: #E84855;
+    color: #F2545B;
     font-size: 3rem;
     font-weight: 400;
 }
 
 .header-updated {
-    color: white;
+    color: #FBFFFE;
     padding: 15px 15% 15px 0;
 
     font-size: 1.1rem;

@@ -3,7 +3,7 @@
 }
 
 .region-area {
-    border: 15px solid #990011;   
+    border: 15px solid #A62832;   
     border-radius: 10px;
 
 }
@@ -37,8 +37,8 @@
 
 .data-board {
     flex: 4 1 40ch;
-    background-color: #FCF6F5;
-    border-left: 15px solid #990011;
+    background-color: #FBFFFE;
+    border-left: 15px solid #A62832;
 }
 
 .title-wrapper {
@@ -48,8 +48,8 @@
     flex-wrap: wrap;
 
     padding: 15px 0 15px 0;
-    color: #FCF6F5;
-    background-color: #990011;
+    color: #FBFFFE;
+    background-color: #A62832;
 }
 
 .region-name {
@@ -77,7 +77,7 @@
 }
 
 .data-board .stat {
-    color: #FCF6F5;
+    color: #FBFFFE;
 }
 
 .prefecture-area {
@@ -97,8 +97,8 @@
 
 .prefecture {
     border-radius: 0 1rem 0 1rem;
-    background-color: #990011;
-    color: #FCF6F5;
+    background-color: #A62832;
+    color: #FBFFFE;
 
     padding: .75rem;
 }
@@ -114,12 +114,12 @@
 }
 
 .prefecture .label {
-    color: #FCF6F5;
+    color: #FBFFFE;
     font-size: 85%;
 }
 
 .prefecture .count {
-    color: #FCF6F5
+    color: #FBFFFE
 }
 
 .share-btn-wrapper {
@@ -130,7 +130,7 @@
 }
 
 .share-btn-wrapper .tooltiptext {
-    color: #fff;
+    color: #FBFFFE;
     text-align: center;
     border-radius: 6px;
     
@@ -142,8 +142,8 @@
 }
 
 .share-btn {
-    color: #FCF6F5;
-    background-color: #990011;
+    color: #FBFFFE;
+    background-color: #A62832;
 
     padding: 10px 15px;
     border-radius: 5px;
@@ -154,16 +154,16 @@
 }
 
 .share-btn:hover {
-    color: #990011;
-    background-color: #FCF6F5;
+    color: #A62832;
+    background-color: #FBFFFE;
 }
 .share-btn:active {
-    color: #FCF6F5;
-    background-color: #990011;
+    color: #FBFFFE;
+    background-color: #A62832;
 }
 
 .green {
-    background-color: #028D2C;
+    background-color: #28A654;
 }
 .stats {
     margin-left: 30px;

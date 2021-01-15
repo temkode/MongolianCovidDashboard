@@ -20,13 +20,13 @@ footer {
 
 .footer-title {
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   font-size: 1.5rem;
 }
 
 .footer-source {
   font-size: 0.85rem;
-  margin-top: 25px;
+  margin-top: 50px;
 }
 
 .footer-source a {
@@ -41,7 +41,7 @@ footer {
 .footer-socials a {
   color: inherit;
   font-size: 1.65rem;
-  margin-left: 0.25rem;
+  margin-right: 0.25rem;
 }
 
 .footer-socials {
@@ -64,6 +64,13 @@ footer {
 @media screen and (max-width: 768px) {
   footer {
     padding: 50px 5%;
+  }
+  .footer-socials a {
+    font-size: 45px;
+    margin-right: 10px;
+  }
+  .footer-left {
+    max-width: 90%;
   }
 }
 

@@ -38,28 +38,28 @@
 }
 
 .stat-list .confirmed {
-    background-color: #990011;
-    color: #EBEBEB;
+    background-color: #A62832;
+    color: #FBFFFE;
 }
 
 .stat-list .recovered {
-    background-color: #028D2C;
-    color: #EBEBEB;
+    background-color: #28A654;
+    color: #FBFFFE;
 }
 
 .stat-list .dead {
-    background-color: #143D3E;
-    color: #EBEBEB;
+    background-color: #596666;
+    color: #FBFFFE;
 }
 
 .stat-list .active {
-    background-color: #E63746;
-    color: #EBEBEB;
+    background-color: #E67237;
+    color: #FBFFFE;
 }
 
 .stat-list .tested {
-    background-color: #0F7173;
-    color: #EBEBEB;
+    background-color: #1F7E80;
+    color: #FBFFFE;
 }
 
 .stat-list i {
