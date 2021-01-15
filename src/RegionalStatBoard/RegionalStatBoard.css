@@ -185,10 +185,10 @@
     }
     .stats {
         padding-top: 15px;
-        margin: 0 15px;
+        margin: 0 1px;
     }
     
     .region-name {
-        padding-left: 10px;
+        padding-left: 1px;
     }
 }
