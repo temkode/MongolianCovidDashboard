@@ -29,6 +29,10 @@ footer {
   margin-top: 50px;
 }
 
+.footer-desc {
+  line-height: 1.5rem;
+}
+
 .footer-source a {
   color: inherit;
 }
@@ -57,8 +61,8 @@ footer {
 #fb:hover {
 	color: #3b5998;
 }
-#yt:hover {
-	color: #db4a39;
+#github:hover {
+	color: #333;
 }
 
 @media screen and (max-width: 768px) {
