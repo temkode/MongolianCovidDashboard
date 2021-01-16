@@ -13,3 +13,30 @@ body {
     font-size: 18px;
     margin: 0;  
 }
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('fonts/RobotoCondensed-Light.woff2') format('woff2'),
+      url('fonts/RobotoCondensed-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('fonts/RobotoCondensed-Regular.woff2') format('woff2'),
+      url('fonts/RobotoCondensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('fonts/RobotoCondensed-Bold.woff2') format('woff2'),
+      url('fonts/RobotoCondensed-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
