@@ -37,6 +37,7 @@ class NationalStatBoard extends React.Component {
 		if (!error) {
 			return (
 				<div className="wrapper-stat-list">
+					<div className="national-stat-title">Монгол улсад нийт:</div>
 					<div className="stat-list">
 						<div className="stat-item confirmed">
 							<div className="label">Батлагдсан <i className="fas fa-viruses"></i></div>

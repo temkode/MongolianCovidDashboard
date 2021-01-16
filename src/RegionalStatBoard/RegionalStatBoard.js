@@ -71,6 +71,7 @@ class RegionalStatBoard extends React.Component {
                     <div className="share-btn-wrapper">
                         <div className="share-btn" onClick={this.copyUrl}>Хуваалцах&nbsp;<i className="fas fa-share-square"></i></div>
                         <span className="hidden tooltiptext" id="url-tip">URL хуулагдлаа!</span>
+                        <div className="national-stat-title">Бүс нутагуудад:</div>
                     </div>
                     <div className="region-area">
                         <div className="region">
