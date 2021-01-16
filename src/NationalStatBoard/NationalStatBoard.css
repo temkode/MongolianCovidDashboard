@@ -13,7 +13,7 @@
 .stat-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-    grid-gap: .8rem;
+    grid-gap: .7rem;
     align-items: start;
     margin-top: 10px;
 }
