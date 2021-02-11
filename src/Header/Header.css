@@ -10,6 +10,7 @@ header {
 
 .header-logo {
     padding: 15px 0 15px 15%;
+    letter-spacing: -2px;
 
     color: #F2545B;
     font-size: 3rem;
