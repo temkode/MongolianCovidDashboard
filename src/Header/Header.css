@@ -48,3 +48,12 @@ header {
         display: block;
     }
 }
+
+@media screen and (max-width: 1280px) {
+    .header-logo {
+        padding: 15px 0 15px 10%;
+    }
+    .header-updated {
+        padding: 15px 10% 15px 0;
+    }
+}

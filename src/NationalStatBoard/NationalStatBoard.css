@@ -86,3 +86,13 @@
         font-size: 1.1rem;
     }
 }
+
+@media screen and (max-width: 1280px) {
+    .wrapper-stat-list {
+        margin: 15px 10%;
+    }
+    .national-stat-title {
+        margin-left: 5px;
+        font-size: 1.1rem;
+    }
+}

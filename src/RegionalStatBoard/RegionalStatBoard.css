@@ -90,7 +90,7 @@
     grid-gap: .8rem;
     align-items: start;
 
-    margin: 20px 0 20px 15px;
+    margin: 20px 0 20px 10px;
     padding-right: 10px;
 
 }
@@ -200,4 +200,10 @@
         display: flex;
         justify-content: space-between;
     }
+}
+
+@media screen and (max-width: 1280px) {
+    .region-wrapper {
+        margin: 50px 10%; 
+    } 
 }

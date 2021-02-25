@@ -78,5 +78,10 @@ footer {
   }
 }
 
+@media screen and (max-width: 1280px) {
+  footer {
+    padding: 50px 10%;
+  }
+}
 
 
