@@ -65,6 +65,12 @@ footer {
 	color: #333;
 }
 
+@media screen and (max-width: 1280px) {
+  footer {
+    padding: 50px 10%;
+  }
+}
+
 @media screen and (max-width: 768px) {
   footer {
     padding: 50px 5%;
@@ -77,11 +83,3 @@ footer {
     max-width: 90%;
   }
 }
-
-@media screen and (max-width: 1280px) {
-  footer {
-    padding: 50px 10%;
-  }
-}
-
-
