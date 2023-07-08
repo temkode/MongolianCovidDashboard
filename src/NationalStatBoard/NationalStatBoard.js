@@ -22,7 +22,7 @@ class NationalStatBoard extends React.Component {
 						</div>
 						<div className="stat-item active">
 							<div className="label">Идэвхтэй <i className="fas fa-procedures"></i></div>
-							<div className="count">1460<div className="diff">( 49 ) ( {isLoaded ? items.criticalCumulative+" хурц" : "..."} )</div></div>
+							<div className="count">1460<div className="diff">( 49 ) ( 2 хурц )</div></div>
 						</div>
 						<div className="stat-item tested">
 							<div className="label">Шинжилгээ хийсэн <i className="fas fa-vial"></i></div>
