@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react';
 import './Header.css';
-
 
 function Header() {
     return (
@@ -10,7 +8,7 @@ function Header() {
 			</div>
         
 			<div className="header-updated">
-			Сүүлд шинэчлэгдсэн:&nbsp;<div className="mobile-space updated">{error || "2 жилийн өмнө"}</div>
+			Сүүлд шинэчлэгдсэн:&nbsp;<div className="mobile-space updated">{"2 жилийн өмнө"}</div>
 			</div>
       	</header>
     )
