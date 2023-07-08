@@ -3,10 +3,6 @@ import './NationalStatBoard.css';
 
 
 class NationalStatBoard extends React.Component {
-	constructor(props) {
-        super(props);
-	}
-
 	render() {
 		const { error, isLoaded, items } = this.state;
 		if (!error) {

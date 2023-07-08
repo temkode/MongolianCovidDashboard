@@ -24,26 +24,6 @@ class RegionalStatBoard extends React.Component {
         }
     }
 
-	componentDidMount() {
-		fetch("https://ywv3go.deta.dev/regional")
-			.then(res => res.json())
-			.then(
-				(result) => {
-					this.setState({
-						isLoaded: true,
-						items: result.data
-					});
-				},
-
-				(error) => {
-					this.setState({
-						isLoaded: true,
-						error
-					});
-				}
-			)
-    }
-
     async copyUrl() {
         const dummy = document.createElement('input');
         const text = window.location.href;
@@ -61,67 +41,57 @@ class RegionalStatBoard extends React.Component {
     }
 
     render () {
-        const up_trend_icon = <i className="fas fa-chart-line"></i>;
-        const healthy_icon = <i className="fas fa-shield-virus"></i>;
-        const { error, isLoaded, items } = this.state;
-        if (!error) {
-            let region_data =  items.find(x => x.name === this.state.region);
-            return  (
-                <div className="region-wrapper">
-                    <div className="share-btn-wrapper">
-                        <div className="share-btn" onClick={this.copyUrl}>Хуваалцах&nbsp;<i className="fas fa-share-square"></i></div>
-                        <span className="hidden tooltiptext" id="url-tip">URL хуулагдлаа!</span>
-                        <div className="national-stat-title">Бүс нутагуудад:</div>
+        <div className="region-wrapper">
+            <div className="share-btn-wrapper">
+                <div className="share-btn" onClick={this.copyUrl}>Хуваалцах&nbsp;<i className="fas fa-share-square"></i></div>
+                <span className="hidden tooltiptext" id="url-tip">URL хуулагдлаа!</span>
+                <div className="national-stat-title">Бүс нутагуудад:</div>
+            </div>
+            <div className="region-area">
+                <div className="region">
+                    <div className="map">
+                        <img src={`${process.env.PUBLIC_URL}/region-images/ub.jpg`} alt="Газрын зураг"/>
                     </div>
-                    <div className="region-area">
-                        <div className="region">
-                            <div className="map">
-                                <img src={`${process.env.PUBLIC_URL}/region-images/ub.jpg`} alt="Газрын зураг"/>
-                            </div>
-                            <div className="data-board">
-                                <div className="title-wrapper">
-                                    <div className="region-name">Улаанбаатар</div>
-                                    <div className="stats">
-                                        <div className="stat">
-                                            <div className="label">Идэвхтэй</div>
-                                            <div className="count">0</div>
-                                        </div>
-                                        <div>
-                                            <div className="label">Нас барсан</div>
-                                            <div className="count">0</div>
-                                        </div>
-                                        <div className="stat">
-                                            <div className="label">Батлагдсан</div>
-                                            <div className="count">0<div className="diff">( 0 )</div></div>
-                                        </div>
-                                    </div>
+                    <div className="data-board">
+                        <div className="title-wrapper">
+                            <div className="region-name">Улаанбаатар</div>
+                            <div className="stats">
+                                <div className="stat">
+                                    <div className="label">Идэвхтэй</div>
+                                    <div className="count">0</div>
                                 </div>
-                                <div className="prefecture-area">
-                                    <div className={`prefecture green`} key='2'>
-                                        <div className="name">
-                                            Улаанбаатар
-                                            {up_trend_icon}
-                                        </div>
-                                        <div className="label">
-                                            Идэвхтэй тохиолдлууд
-                                        </div>
-                                        <div className="count">
-                                            {0}
-                                            <div className="diff">
-                                                ( 0 )
-                                            </div>
-                                        </div>
+                                <div>
+                                    <div className="label">Нас барсан</div>
+                                    <div className="count">0</div>
+                                </div>
+                                <div className="stat">
+                                    <div className="label">Батлагдсан</div>
+                                    <div className="count">0<div className="diff">( 0 )</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="prefecture-area">
+                            <div className={`prefecture green`} key='2'>
+                                <div className="name">
+                                    Улаанбаатар
+                                    {up_trend_icon}
+                                </div>
+                                <div className="label">
+                                    Идэвхтэй тохиолдлууд
+                                </div>
+                                <div className="count">
+                                    {0}
+                                    <div className="diff">
+                                        ( 0 )
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <RegionNavMenu regions={[]}/>
                 </div>
-            )
-        } else {
-            return <h1>Error</h1>
-        }        
+            </div>
+            <RegionNavMenu regions={[]}/>
+        </div>
     }
 }
 
