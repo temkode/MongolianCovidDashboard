@@ -76,55 +76,47 @@ class RegionalStatBoard extends React.Component {
                     <div className="region-area">
                         <div className="region">
                             <div className="map">
-                                <img src={`${process.env.PUBLIC_URL}/region-images/${isLoaded ? region_data.image_path : "ub.jpg"}`} alt="Газрын зураг"/>
+                                <img src={`${process.env.PUBLIC_URL}/region-images/ub.jpg`} alt="Газрын зураг"/>
                             </div>
                             <div className="data-board">
                                 <div className="title-wrapper">
-                                    <div className="region-name">
-                                        {isLoaded ? region_data.display_name : "..."}
-                                    </div>
+                                    <div className="region-name">Улаанбаатар</div>
                                     <div className="stats">
                                         <div className="stat">
                                             <div className="label">Идэвхтэй</div>
-                                            <div className="count">{isLoaded ? region_data.active : "..."}</div>
+                                            <div className="count">0</div>
                                         </div>
                                         <div>
                                             <div className="label">Нас барсан</div>
-                                            <div className="count">{isLoaded ? region_data.deceased : "..."}</div>
+                                            <div className="count">0</div>
                                         </div>
                                         <div className="stat">
                                             <div className="label">Батлагдсан</div>
-                                            <div className="count">{isLoaded ? region_data.confirmed : "..."}<div className="diff">( {isLoaded ? region_data.newlyConfirmed : "..."} )</div></div>
+                                            <div className="count">0<div className="diff">( 0 )</div></div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="prefecture-area">
-                                    {isLoaded ? region_data.prefectures.map(prefecture_data => {
-                                        const is_green = prefecture_data.confirmed === "0";
-                                        return (
-                                            <div className={`prefecture ${is_green ? "green" : ""}`} key={prefecture_data.name}>
-                                                <div className="name">
-                                                    {prefecture_data.display_name}
-                                                    {prefecture_data.newlyConfirmed !== "+0" ? up_trend_icon : null}
-                                                    {is_green ? healthy_icon : null}
-                                                </div>
-                                                <div className="label">
-                                                    Идэвхтэй тохиолдлууд
-                                                </div>
-                                                <div className="count">
-                                                    {prefecture_data.confirmed}
-                                                    <div className="diff">
-                                                        ( {prefecture_data.newlyConfirmed} )
-                                                    </div>
-                                                </div>
+                                    <div className={`prefecture green`} key='2'>
+                                        <div className="name">
+                                            Улаанбаатар
+                                            {up_trend_icon}
+                                        </div>
+                                        <div className="label">
+                                            Идэвхтэй тохиолдлууд
+                                        </div>
+                                        <div className="count">
+                                            {0}
+                                            <div className="diff">
+                                                ( 0 )
                                             </div>
-                                        )
-                                    }) : null}
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <RegionNavMenu regions={isLoaded ? items : []}/>
+                    <RegionNavMenu regions={[]}/>
                 </div>
             )
         } else {

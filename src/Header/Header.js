@@ -3,22 +3,6 @@ import './Header.css';
 
 
 function Header() {
-	const [error, setError] = useState(null);
-	const [item, setItem] = useState('');
-
-	useEffect(() => {
-		fetch("https://ywv3go.deta.dev/updated")
-			.then(res => res.json())
-			.then(
-				(result) => {
-					setItem(result.updated);
-				},
-				(error) => {
-					setError(error);
-				}
-			)
-	}, [])
-
     return (
       	<header>
 			<div className="header-logo">
@@ -26,7 +10,7 @@ function Header() {
 			</div>
         
 			<div className="header-updated">
-			Сүүлд шинэчлэгдсэн:&nbsp;<div className="mobile-space updated">{error || timeSince(item)}</div>
+			Сүүлд шинэчлэгдсэн:&nbsp;<div className="mobile-space updated">{error || "2 жилийн өмнө"}</div>
 			</div>
       	</header>
     )
