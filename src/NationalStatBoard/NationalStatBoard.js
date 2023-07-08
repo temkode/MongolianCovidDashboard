@@ -4,8 +4,6 @@ import './NationalStatBoard.css';
 
 class NationalStatBoard extends React.Component {
 	render() {
-		const { error, isLoaded, items } = this.state;
-		if (!error) {
 			return (
 				<div className="wrapper-stat-list">
 					<div className="national-stat-title">Монгол улсад нийт:</div>
@@ -33,9 +31,6 @@ class NationalStatBoard extends React.Component {
 					</div>
 				</div>
 			)
-		} else {
-			return <h1>Error</h1>  // TODO properly handle
-		}
 	}
 }
 
