@@ -41,7 +41,8 @@ class RegionalStatBoard extends React.Component {
     }
 
     render () {
-        <div className="region-wrapper">
+        return (
+            <div className="region-wrapper">
             <div className="share-btn-wrapper">
                 <div className="share-btn" onClick={this.copyUrl}>Хуваалцах&nbsp;<i className="fas fa-share-square"></i></div>
                 <span className="hidden tooltiptext" id="url-tip">URL хуулагдлаа!</span>
@@ -74,7 +75,6 @@ class RegionalStatBoard extends React.Component {
                             <div className={`prefecture green`} key='2'>
                                 <div className="name">
                                     Улаанбаатар
-                                    {up_trend_icon}
                                 </div>
                                 <div className="label">
                                     Идэвхтэй тохиолдлууд
@@ -92,6 +92,7 @@ class RegionalStatBoard extends React.Component {
             </div>
             <RegionNavMenu regions={[]}/>
         </div>
+        )
     }
 }
 
